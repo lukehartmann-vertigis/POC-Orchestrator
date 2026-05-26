@@ -1,0 +1,106 @@
+[
+  {
+    "id": 203603,
+    "title": "Layer: Switch layer on and off",
+    "state": "Ready",
+    "priority": 2,
+    "area": "Utilities\\Teams\\Network Solutions",
+    "tags": ["QA-TC-VNE"],
+    "description": "As a network operations manager, I would like to switch individual layers on and off, for example to get an overview of other lines to my currently displayed domain.",
+    "steps": [
+      {
+        "id": 2,
+        "type": "ActionStep",
+        "action": "Pane Layer",
+        "expectedResult": ""
+      },
+      {
+        "id": 3,
+        "type": "ValidateStep",
+        "action": "Disable Layers",
+        "expectedResult": "the layer is no more visible"
+      },
+      {
+        "id": 4,
+        "type": "ValidateStep",
+        "action": "enable Layers again",
+        "expectedResult": "the layer is visible again"
+      }
+    ]
+  },
+  {
+    "id": 254572,
+    "title": "[Studio Web] User Information Menu",
+    "state": "Ready",
+    "priority": 2,
+    "area": "Utilities",
+    "tags": [],
+    "description": "",
+    "steps": [
+      {
+        "id": 2,
+        "type": "ValidateStep",
+        "action": "Open \"User Information Menu\" ( Button on the bottom right side of the app)",
+        "expectedResult": "- Login Information is shown.\n- Studio Web Version is shown\n- VertiGIS Network App Version is shown\n- Link to Shortcuts is shown"
+      }
+    ]
+  },
+  {
+    "id": 204043,
+    "title": "[Studio Web] Dark mode / Light mode",
+    "state": "Ready",
+    "priority": 2,
+    "area": "Utilities\\Teams\\Network Solutions",
+    "tags": ["QA-TC-VNE", "QA-TC-VNEX"],
+    "description": "",
+    "steps": [
+      {
+        "id": 2,
+        "type": "ValidateStep",
+        "action": "Open \"User Settings\" via clicking on the icon \"Show user settings\" on the bottom right side of the app",
+        "expectedResult": "User Preferences are shown and could be changed by user."
+      },
+      {
+        "id": 3,
+        "type": "ValidateStep",
+        "action": "Change between Theme \"Light\" and \"Dark\"",
+        "expectedResult": "UI changes according to the setting"
+      },
+      {
+        "id": 4,
+        "type": "ActionStep",
+        "action": "Hint: This setting will be saved for the user also when leaving and restarting the app.",
+        "expectedResult": ""
+      }
+    ]
+  },
+  {
+    "id": 204034,
+    "title": "[Studio Web] Use Legend",
+    "state": "Ready",
+    "priority": 2,
+    "area": "Utilities\\Teams\\Network Solutions",
+    "tags": ["QA-TC-VNE", "QA-TC-VNEX"],
+    "description": "",
+    "steps": [
+      {
+        "id": 2,
+        "type": "ValidateStep",
+        "action": "Open Panel Legend",
+        "expectedResult": "Legend is visible for visible Layers"
+      },
+      {
+        "id": 3,
+        "type": "ActionStep",
+        "action": "Deactivate visibility of a layergroup, e.g. Gas",
+        "expectedResult": ""
+      },
+      {
+        "id": 4,
+        "type": "ValidateStep",
+        "action": "Open again Panel Legend",
+        "expectedResult": "Legend for invisible Layers (e.g. Gas) is not shown"
+      }
+    ]
+  }
+]
