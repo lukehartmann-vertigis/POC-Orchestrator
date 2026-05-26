@@ -11,10 +11,15 @@ const main = async () => {
 
     // Create conversation with initial user message
     console.log("\nCreating conversation with initial user message...");
-    const conversation = await client.conversations.create({
-        items: [{ type: "message", role: "user", content: "What is the size of France in square miles?" }]
+    const response = await client.responses.create({
+        model: config.deployment,
+        temperature: 0,
+        max_output_tokens: 300,
+        input: [
+            { role: "system", content: 'You are a helpful assistant.' },
+            { role: "user", content: "Give a Test Answer" }
+        ]
     });
-    console.log("Created conversation with initial user message (id: ");
-    console.log(conversation.id);
+    console.log(response?.output[0]);
 }
 main();
